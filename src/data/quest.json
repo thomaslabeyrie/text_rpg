@@ -3,16 +3,19 @@
 		"id": "start",
 		"title": "Mirewood Town Square",
 		"description": "Villagers whisper about the healer’s missing daughter. The mayor notices you and approaches warily.",
-		"image": "/assets/town-square.jpg",
+		"image": "https://placehold.co/400x400/transparent/FFF?text=Town+Square",
 		"choices": [
 			{
-				"text": "Ask the mayor for details",
-				"next": "mayor_talk"
+				"text": "Head to the inn",
+				"next": "inn"
 			},
 			{
-				"text": "Head straight to the healer’s hut",
-				"next": "hut",
-				"setFlag": "skipped_briefing"
+				"text": "Head to the store",
+				"next": "shop"
+			},
+			{
+				"text": "Head to the forest",
+				"next": "forest"
 			}
 		]
 	}

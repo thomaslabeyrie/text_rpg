@@ -8,10 +8,9 @@
 <style>
 	.view {
 		height: 80vh;
-		width: 60%;
-		padding: 0 10rem;
+		width: 60vw;
 
-		border: 1px solid var(--text);
+		/* border: 1px solid var(--text); */
 
 		display: flex;
 		flex-direction: column;

@@ -1,5 +1,33 @@
 /* GLOBAL STYLES */
 
+@font-face {
+	font-family: 'Jacquard 24';
+	src: url('/assets/fonts/Jacquard24-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Pixelify Sans';
+	src: url('/assets/fonts/PixelifySans-VariableFont_wght.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Micro 5';
+	src: url('/assets/fonts/Micro5-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'C&C Red Alert';
+	src: url('/assets/fonts/C&C-Red-Alert.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 :root {
 	--background: hsl(0, 0%, 10%);
 	--text: hsl(0, 0%, 90%);
@@ -12,6 +40,10 @@
 }
 
 body {
+	font-family: 'C&C Red Alert';
+	font-size: 1.5rem;
+	font-weight: 400;
+
 	background-color: var(--background);
 	color: var(--text);
 

@@ -1,7 +1,12 @@
 <script>
+	// Global CSS
 	import '../reset.css';
 	import '../app.css';
 
+	// Data
+	import quest from '../data/quest.json';
+
+	// Components
 	import GameLayout from '../components/GameLayout.svelte';
 	import GameView from '../components/GameView.svelte';
 	import SceneImage from '../components/SceneImage.svelte';
@@ -11,9 +16,9 @@
 
 <GameLayout>
 	<GameView>
-		<SceneImage />
+		<SceneImage src={quest.start.image} />
 
-		<SceneText />
+		<SceneText text={quest.start.description} />
 
 		<ChoicesButtons />
 	</GameView>

@@ -1,8 +1,9 @@
 <script>
+	let { src } = $props();
 </script>
 
 <main class="image-container">
-	<img src="https://placehold.co/400x400" alt="placeholder" />
+	<img {src} alt="placeholder" />
 </main>
 
 <style>
@@ -10,6 +11,7 @@
 		height: fit-content;
 		width: fit-content;
 		line-height: 0;
-		border: 1px solid red;
+
+		border: 1px solid var(--text);
 	}
 </style>

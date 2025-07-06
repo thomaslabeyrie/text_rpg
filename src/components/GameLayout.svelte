@@ -2,17 +2,17 @@
 </script>
 
 <div class="layout">
-	<header>
-		<h1>Text RPG</h1>
-	</header>
+	<!-- <header>
+		<h1>Mirewood Adventure</h1>
+	</header> -->
 
 	<main>
 		<slot />
 	</main>
 
-	<footer>
+	<!-- <footer>
 		<p>© 2025 Thomas Labeyrie • Text RPG</p>
-	</footer>
+	</footer> -->
 </div>
 
 <style>
@@ -26,9 +26,10 @@
 		align-items: center;
 	}
 
-	h1 {
-		font-size: 2rem;
-	}
+	/* h1 {
+		font-family: 'Jacquard 24';
+		font-size: 3rem;
+	} */
 
 	main {
 		padding: 1rem;
