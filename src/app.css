@@ -1,5 +1,11 @@
 /* GLOBAL STYLES */
 
+:root {
+	--background: hsl(0, 0%, 7.5%);
+	--text: hsl(0, 0%, 90%);
+	--text-inactive: hsl(0, 0%, 45%);
+}
+
 @font-face {
 	font-family: 'Jacquard 24';
 	src: url('/assets/fonts/Jacquard24-Regular.ttf') format('truetype');
@@ -26,11 +32,6 @@
 	src: url('/assets/fonts/C&C-Red-Alert.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
-}
-
-:root {
-	--background: hsl(0, 0%, 10%);
-	--text: hsl(0, 0%, 90%);
 }
 
 * {

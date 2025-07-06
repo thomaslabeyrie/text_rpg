@@ -4,14 +4,18 @@
 
 <main class="text-container">
 	<p>
-		{text}
+		{@html text}
 	</p>
 </main>
 
 <style>
 	.text-container {
+		display: block;
 		width: 100%;
-		padding: 1.5rem;
-		border: 1px solid var(--text);
+		height: 300px;
+
+		/* border: 1px solid red; */
+
+		overflow: scroll;
 	}
 </style>

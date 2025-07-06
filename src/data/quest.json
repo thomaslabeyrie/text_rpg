@@ -2,8 +2,8 @@
 	"start": {
 		"id": "start",
 		"title": "Mirewood Town Square",
-		"description": "Villagers whisper about the healer’s missing daughter. The mayor notices you and approaches warily.",
-		"image": "https://placehold.co/400x400/transparent/FFF?text=Town+Square",
+		"description": "The cobblestones glisten under a thin veil of rain, still warm from the day’s heat. Lanterns flicker weakly in wrought-iron sconces, casting long, dancing shadows across the narrow alleys that snake away from the town square. The scent of damp earth and burning tallow fills the air.<br/><br/>You step into the square as the last light bleeds from the sky. A hunched figure closes the shutters of the inn to your left, while the distant clang of metal echoes from the blacksmith’s forge. A stray dog slinks between crates near the boarded-up shopfronts, and above it all, the bell tower looms — silent.<br/><br/>Something feels… off. The town is too quiet for this hour. No chatter. No laughter. Just the uneasy hush of a place holding its breath.",
+		"image": "/assets/img/town-square.png",
 		"choices": [
 			{
 				"text": "Head to the inn",

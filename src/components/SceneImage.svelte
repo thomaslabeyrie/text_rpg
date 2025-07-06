@@ -8,10 +8,17 @@
 
 <style>
 	.image-container {
-		height: fit-content;
-		width: fit-content;
+		height: 512px;
+		width: 512px;
 		line-height: 0;
 
-		border: 1px solid var(--text);
+		border: 1px solid black;
+
+		img {
+			image-rendering: pixelated;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 </style>

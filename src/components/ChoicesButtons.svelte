@@ -3,9 +3,11 @@
 </script>
 
 <main class="choices-container">
-	{#each quest.start.choices as choice}
-		<button>{choice.text.toUpperCase()}</button>
-	{/each}
+	<ol>
+		{#each quest.start.choices as choice}
+			<li><button>{choice.text.toUpperCase()}</button></li>
+		{/each}
+	</ol>
 </main>
 
 <style>
@@ -16,17 +18,29 @@
 		justify-content: space-around;
 		align-items: center;
 
+		ol {
+			list-style: decimal;
+		}
+
+		li {
+			margin: 0.25rem 0;
+			color: var(--text-inactive);
+		}
+
+		li:hover {
+			color: var(--text);
+		}
+
 		button {
 			font-family: inherit;
 			font-size: 1.5rem;
-			color: var(--text);
-
-			padding: 0.5rem 1rem;
+			color: inherit;
 
 			background-color: transparent;
 
 			/* border: 1px solid var(--text); */
 			border: none;
+			cursor: pointer;
 		}
 	}
 </style>
