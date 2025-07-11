@@ -7,14 +7,14 @@
 
 <style>
 	.view {
-		height: 90vh;
+		height: 95vh;
 		width: 60vw;
 
-		/* border: 1px solid var(--text); */
+		/* border: 1px solid var(--text-inactive); */
 
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: space-evenly;
 		align-items: center;
 		gap: 2rem;
 	}

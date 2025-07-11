@@ -12,7 +12,8 @@
 	.text-container {
 		display: block;
 		width: 100%;
-		height: 300px;
+		height: fit-content;
+		max-height: 350px;
 
 		/* border: 1px solid red; */
 

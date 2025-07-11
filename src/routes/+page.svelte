@@ -1,10 +1,12 @@
 <script>
 	// Global CSS
 	import '../reset.css';
+	import '../fonts.css';
 	import '../app.css';
 
 	// Data
-	import quest from '../data/quest.json';
+	import scenes from '../data/scenes.json';
+	import { currentScene } from '../stores/state';
 
 	// Components
 	import GameLayout from '../components/GameLayout.svelte';
@@ -12,17 +14,16 @@
 	import SceneImage from '../components/SceneImage.svelte';
 	import SceneText from '../components/SceneText.svelte';
 	import ChoicesButtons from '../components/ChoicesButtons.svelte';
+
+	let scene = $state(scenes.start);
 </script>
 
 <GameLayout>
 	<GameView>
-		<SceneImage src={quest.start.image} />
+		<SceneImage src={scenes.start.image} />
 
-		<SceneText text={quest.start.description} />
+		<SceneText text={scenes.start.description_fr} />
 
-		<ChoicesButtons />
+		<ChoicesButtons scene={currentScene} />
 	</GameView>
 </GameLayout>
-
-<style>
-</style>

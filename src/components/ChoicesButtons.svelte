@@ -1,11 +1,25 @@
 <script>
-	import quest from '../data/quest.json';
+	// Data
+	import scenes from '../data/scenes.json';
+
+	// Handlers
+	const { currentScene } = $props();
+
+	console.log({ currentScene });
 </script>
 
 <main class="choices-container">
 	<ol>
-		{#each quest.start.choices as choice}
-			<li><button>{choice.text.toUpperCase()}</button></li>
+		{#each { currentScene }.choices as choice}
+			<li>
+				<button
+					onclick={() => {
+						console.log({ currentScene });
+					}}
+				>
+					{choice.text.toUpperCase()}
+				</button>
+			</li>
 		{/each}
 	</ol>
 </main>

@@ -1,0 +1,37 @@
+{
+	"start": {
+		"id": "start",
+		"title": "Town Square",
+		"description_en": "Rain slicks the cobblestones as lanterns sputter in the dusk. You enter the town square, where shadows stretch long and the air smells of smoke and wet stone.<br/><br/>The innkeeper shuts his windows in silence. A stray dog noses at crates. From somewhere far off, metal strikes metal — then quiet.<br/><br/>Too quiet. Something here isn't right.",
+		"description_fr": "La pluie glisse sur les pavés tandis que les lanternes vacillent dans le crépuscule. Vous entrez sur la place du village, où les ombres s’allongent et l’air sent la fumée et la pierre mouillée.<br/><br/>L’aubergiste ferme ses volets en silence. Un chien errant fouille des caisses. Au loin, le bruit sourd du métal… puis plus rien.<br/><br/>Trop de silence. Quelque chose ne tourne pas rond.",
+		"image": "/assets/img/town-square.png",
+		"choices": [
+			{
+				"text": "Head to the inn",
+				"next": "inn"
+			},
+			{
+				"text": "Head to the store",
+				"next": "shop"
+			},
+			{
+				"text": "Head to the forest",
+				"next": "forest"
+			}
+		]
+	},
+
+	"inn": {
+		"id": "inn",
+		"title": "Inn",
+		"description_en": "Inside, the inn is dim and low-ceilinged, its wooden beams darkened by age and smoke. A few hunched figures nurse drinks in silence, while the hearth crackles faintly in the corner, casting long shadows on the walls.",
+		"description_fr": "À l’intérieur, l’auberge est sombre et basse de plafond, ses poutres de bois noircies par le temps et la fumée. Quelques silhouettes voûtées sirotent leur boisson en silence, tandis que le foyer crépite faiblement dans un coin, projetant de longues ombres sur les murs.",
+		"image": "/assets/img/inn.png",
+		"choices": [
+			{
+				"text": "Go back to town square",
+				"next": "town_square"
+			}
+		]
+	}
+}
