@@ -30,7 +30,7 @@
 		"choices": [
 			{
 				"text": "Go back to town square",
-				"next": "town_square"
+				"next": "start"
 			}
 		]
 	}

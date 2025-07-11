@@ -1,22 +1,14 @@
 <script>
-	// Data
-	import scenes from '../data/scenes.json';
+	const { choices, updateCurrentScene } = $props();
 
-	// Handlers
-	const { currentScene } = $props();
-
-	console.log({ currentScene });
+	// console.log(choices);
 </script>
 
 <main class="choices-container">
 	<ol>
-		{#each { currentScene }.choices as choice}
+		{#each choices as choice}
 			<li>
-				<button
-					onclick={() => {
-						console.log({ currentScene });
-					}}
-				>
+				<button onclick={() => updateCurrentScene(choice.next)}>
 					{choice.text.toUpperCase()}
 				</button>
 			</li>

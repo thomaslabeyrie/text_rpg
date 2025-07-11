@@ -1,4 +1,5 @@
 <script>
+	let { children } = $props();
 </script>
 
 <div class="layout">
@@ -6,8 +7,8 @@
 		<h1>Mirewood Adventure</h1>
 	</header> -->
 
-	<main>
-		<slot />
+	<main class="view">
+		{@render children()}
 	</main>
 
 	<!-- <footer>
@@ -31,11 +32,16 @@
 		font-size: 3rem;
 	} */
 
-	main {
-		padding: 1rem;
+	.view {
+		height: 95vh;
+		width: 60vw;
+
+		/* border: 1px solid var(--text-inactive); */
 
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		justify-content: space-evenly;
 		align-items: center;
+		gap: 2rem;
 	}
 </style>
