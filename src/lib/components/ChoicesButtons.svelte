@@ -1,17 +1,37 @@
 <script>
+	import player from '$lib/stores/player.svelte';
+	import shop from '../../data/shop.json';
+
 	const { choices, updateCurrentScene } = $props();
 
-	// console.log(choices);
+	function purchaseItem(item) {
+		if (player.gold >= item.value) {
+			player.inventory.push(item.name);
+			player.gold -= item.value;
+		} else {
+			console.log('not enough gold');
+		}
+	}
 </script>
 
 <main class="choices-container">
 	<ol>
 		{#each choices as choice}
-			<li>
-				<button onclick={() => updateCurrentScene(choice.next)}>
-					{choice.text.toUpperCase()}
-				</button>
-			</li>
+			{#if choice.action}
+				<li>
+					<button onclick={() => purchaseItem(shop[choice.text])}>
+						BUY {choice.text.toUpperCase()}
+					</button>
+				</li>
+			{/if}
+
+			{#if choice.next}
+				<li>
+					<button onclick={() => updateCurrentScene(choice.next)}>
+						{choice.text.toUpperCase()}
+					</button>
+				</li>
+			{/if}
 		{/each}
 	</ol>
 </main>
@@ -30,11 +50,10 @@
 
 		li {
 			margin: 0.25rem 0;
-			color: var(--text-inactive);
 		}
 
 		li:hover {
-			color: var(--text);
+			color: var(--text-hovered);
 		}
 
 		button {

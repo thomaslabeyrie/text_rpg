@@ -7,10 +7,14 @@
 	// Data
 	import scenes from '../data/scenes.json';
 
+	import player from '$lib/stores/player.svelte.js';
+
 	// Components
 	import SceneImage from '$lib/components/SceneImage.svelte';
 	import SceneText from '$lib/components/SceneText.svelte';
 	import ChoicesButtons from '$lib/components/ChoicesButtons.svelte';
+	import TradeWindow from '$lib/components/TradeWindow.svelte';
+	import PlayerInfos from '$lib/components/PlayerInfos.svelte';
 
 	let currentSceneId = 'start';
 	let currentScene = scenes[currentSceneId];
@@ -24,6 +28,11 @@
 
 <SceneImage src={currentScene.image} />
 
-<SceneText text={currentScene.description_fr} />
+<SceneText text={currentScene.description_en} />
 
 <ChoicesButtons choices={currentScene.choices} {updateCurrentScene} />
+
+<PlayerInfos />
+
+<style>
+</style>

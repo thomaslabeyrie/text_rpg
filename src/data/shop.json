@@ -1,0 +1,22 @@
+{
+	"potion": {
+		"name": "Potion",
+		"type": "consumable",
+		"description": "Restores 25 health.",
+		"value": 10
+	},
+
+	"iron sword": {
+		"name": "Iron Sword",
+		"type": "weapon",
+		"description": "A basic iron sword.",
+		"value": 25
+	},
+
+	"leather_armor": {
+		"name": "Leather Armor",
+		"type": "armor",
+		"description": "A crude leather armor.",
+		"value": 20
+	}
+}

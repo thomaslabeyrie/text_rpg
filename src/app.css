@@ -4,6 +4,7 @@
 	--background: hsl(0, 0%, 7.5%);
 	--text: hsl(0, 0%, 90%);
 	--text-inactive: hsl(0, 0%, 45%);
+	--text-hovered: hsl(50, 80%, 60%);
 }
 
 * {
@@ -23,4 +24,15 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+button {
+	font: inherit;
+	color: inherit;
+
+	background-color: transparent;
+
+	/* border: 1px solid var(--text); */
+	border: none;
+	cursor: pointer;
 }

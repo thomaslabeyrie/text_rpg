@@ -36,11 +36,9 @@
 		height: 95vh;
 		width: 60vw;
 
-		/* border: 1px solid var(--text-inactive); */
-
 		display: flex;
 		flex-direction: column;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		align-items: center;
 		gap: 2rem;
 	}
