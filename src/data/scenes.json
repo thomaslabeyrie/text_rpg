@@ -52,5 +52,22 @@
 				"next": "start"
 			}
 		]
+	},
+
+	"forest": {
+		"id": "forest",
+		"title": "Forest",
+		"description_en": "The shop is a cluttered, dimly lit space filled with curious trinkets and worn tools. Shelves groan under the weight of potions, gear, and oddities. A hunched shopkeeper eyes you warily from behind the counter, the scent of herbs and dust thick in the air.",
+		"image": "/assets/img/forest.png",
+		"choices": [
+			{
+				"text": "Fight the young wolf",
+				"next": "combat"
+			},
+			{
+				"text": "Leave",
+				"next": "start"
+			}
+		]
 	}
 }

@@ -1,4 +1,4 @@
-const player = $state({
+export const player = $state({
 	health: 100,
 	gold: 100,
 	weapon: null,
@@ -7,5 +7,3 @@ const player = $state({
 		//TODO
 	}
 });
-
-export default player;

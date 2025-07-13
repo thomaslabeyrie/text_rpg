@@ -1,13 +1,16 @@
 <script>
-	import player from '$lib/stores/player.svelte';
+	import { player } from '$lib/stores/player.svelte';
 	import shop from '../../data/shop.json';
+	import { shopItems } from '$lib/stores/shop.svelte.js';
 
-	const { choices, updateCurrentScene } = $props();
+	const { currentScene, updateCurrentScene } = $props();
 
 	function purchaseItem(item) {
 		if (player.gold >= item.value) {
 			player.inventory.push(item.name);
 			player.gold -= item.value;
+
+			console.log($state.snapshot(player.inventory));
 		} else {
 			console.log('not enough gold');
 		}
@@ -16,15 +19,16 @@
 
 <main class="choices-container">
 	<ol>
-		{#each choices as choice}
-			{#if choice.action}
+		{#if currentScene.id === 'shop'}
+			{#each shopItems as item}
 				<li>
-					<button onclick={() => purchaseItem(shop[choice.text])}>
-						BUY {choice.text.toUpperCase()}
+					<button onclick={() => purchaseItem(item)}>
+						BUY {item.name.toUpperCase()} ({item.value} GOLD)
 					</button>
 				</li>
-			{/if}
-
+			{/each}
+		{/if}
+		{#each currentScene.choices as choice}
 			{#if choice.next}
 				<li>
 					<button onclick={() => updateCurrentScene(choice.next)}>

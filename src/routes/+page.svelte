@@ -7,7 +7,7 @@
 	// Data
 	import scenes from '../data/scenes.json';
 
-	import player from '$lib/stores/player.svelte.js';
+	import { player } from '$lib/stores/player.svelte.js';
 
 	// Components
 	import SceneImage from '$lib/components/SceneImage.svelte';
@@ -17,9 +17,9 @@
 	import PlayerInfos from '$lib/components/PlayerInfos.svelte';
 
 	let currentSceneId = 'start';
-	let currentScene = scenes[currentSceneId];
+	let currentScene = $state(scenes[currentSceneId]);
 
-	console.log(`current scene: ${currentScene.id}`);
+	$inspect(currentScene.id);
 
 	function updateCurrentScene(id) {
 		currentScene = scenes[id];
@@ -30,7 +30,7 @@
 
 <SceneText text={currentScene.description_en} />
 
-<ChoicesButtons choices={currentScene.choices} {updateCurrentScene} />
+<ChoicesButtons {currentScene} {updateCurrentScene} />
 
 <PlayerInfos />
 
