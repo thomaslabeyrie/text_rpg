@@ -5,25 +5,30 @@
 	import '../app.css';
 
 	// Data
-	import scenes from '../data/scenes.json';
 
-	import { player } from '$lib/stores/player.svelte.js';
+	import scenes from '../data/scenes.json';
+	import { player } from '$lib/stores/player.js';
 
 	// Components
 	import SceneImage from '$lib/components/SceneImage.svelte';
 	import SceneText from '$lib/components/SceneText.svelte';
 	import ChoicesButtons from '$lib/components/ChoicesButtons.svelte';
-	import TradeWindow from '$lib/components/TradeWindow.svelte';
 	import PlayerInfos from '$lib/components/PlayerInfos.svelte';
+	import { onMount } from 'svelte';
+	import { syncStorage } from '../data/indexedDB';
 
 	let currentSceneId = 'start';
 	let currentScene = $state(scenes[currentSceneId]);
 
-	$inspect(currentScene.id);
-
 	function updateCurrentScene(id) {
 		currentScene = scenes[id];
 	}
+
+	$inspect(currentScene.id);
+
+	onMount(() => {
+		syncStorage();
+	});
 </script>
 
 <SceneImage src={currentScene.image} />
@@ -33,6 +38,3 @@
 <ChoicesButtons {currentScene} {updateCurrentScene} />
 
 <PlayerInfos />
-
-<style>
-</style>

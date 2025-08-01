@@ -1,16 +1,17 @@
 <script>
-	import { player } from '$lib/stores/player.svelte';
+	import { player } from '$lib/stores/player';
 	import shop from '../../data/shop.json';
 	import { shopItems } from '$lib/stores/shop.svelte.js';
+	import { updateStorage } from '../../data/indexedDB';
 
 	const { currentScene, updateCurrentScene } = $props();
 
 	function purchaseItem(item) {
-		if (player.gold >= item.value) {
-			player.inventory.push(item.name);
-			player.gold -= item.value;
+		if ($player.gold >= item.value) {
+			$player.inventory.push(item.name);
+			$player.gold -= item.value;
 
-			console.log($state.snapshot(player.inventory));
+			updateStorage();
 		} else {
 			console.log('not enough gold');
 		}
