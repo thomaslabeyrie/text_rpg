@@ -1,13 +1,29 @@
 <script>
 	import { player } from '$lib/stores/player.js';
+
+	const formattedInventory = $derived(
+		Object.values(
+			$player.inventory.reduce((acc, item) => {
+				if (!acc[item.name]) {
+					acc[item.name] = { ...item, quantity: 0 };
+				}
+				acc[item.name].quantity++;
+				return acc;
+			}, {})
+		)
+	);
 </script>
 
 <main>
 	<div class="health">Health: {$player.health}</div>
 	<div class="gold">Gold: {$player.gold}</div>
-	<div class="weapon">Weapon: {$player.weapon}</div>
+	<div class="weapon">Weapon: {$player.weapon.name}</div>
 	<div class="items">
-		Items: {$player.inventory.join(`, `)}
+		Items:
+		{#each formattedInventory as item}
+			<!-- TODO: correctly format the items list, with commas in between words but not after the last one -->
+			{item.name} x{item.quantity}
+		{/each}
 	</div>
 </main>
 

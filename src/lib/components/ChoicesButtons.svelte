@@ -7,7 +7,11 @@
 
 	function purchaseItem(item) {
 		if ($player.gold >= item.value) {
-			$player.inventory.push(item.name);
+			if (item.type === 'weapon') {
+				$player.weapon = item;
+				return;
+			}
+			$player.inventory.push(item);
 			$player.gold -= item.value;
 		} else {
 			console.log('not enough gold');
