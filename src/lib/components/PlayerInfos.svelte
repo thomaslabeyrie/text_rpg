@@ -15,9 +15,17 @@
 </script>
 
 <main>
-	<div class="health">Health: {$player.health}</div>
-	<div class="gold">Gold: {$player.gold}</div>
-	<div class="weapon">Weapon: {$player.weapon.name}</div>
+	<div class="wrapper">
+		<img class="icon heart" src="/assets/img/icons/heart.svg" alt="hearth" />
+		{$player.health}
+	</div>
+
+	<div class="wrapper">
+		<img class="icon coin" src="/assets/img/icons/coin.svg" alt="coin" />
+		{$player.gold}
+	</div>
+
+	<div class="wrapper">Weapon: {$player.weapon.name}</div>
 	<div class="items">
 		Items:
 		{#each formattedInventory as item}
@@ -33,5 +41,16 @@
 		justify-content: center;
 		align-items: center;
 		gap: 2rem;
+	}
+
+	.wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.icon {
+		width: 24px;
 	}
 </style>

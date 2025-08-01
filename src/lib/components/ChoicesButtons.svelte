@@ -1,7 +1,7 @@
 <script>
 	import { player } from '$lib/stores/player';
-	import shop from '../../data/shop.json';
 	import { shopItems } from '$lib/stores/shop.svelte.js';
+	import shop from '../../data/shop.json';
 
 	const { currentScene, updateCurrentScene } = $props();
 
@@ -9,11 +9,12 @@
 		if ($player.gold >= item.value) {
 			if (item.type === 'weapon') {
 				$player.weapon = item;
-				return;
+			} else {
+				$player.inventory.push(item);
 			}
-			$player.inventory.push(item);
 			$player.gold -= item.value;
 		} else {
+			// TODO: display an error in UI
 			console.log('not enough gold');
 		}
 	}
@@ -25,7 +26,7 @@
 			{#each shopItems as item}
 				<li>
 					<button onclick={() => purchaseItem(item)}>
-						BUY {item.name.toUpperCase()} ({item.value} GOLD)
+						Buy {item.name} ({item.value} G)
 					</button>
 				</li>
 			{/each}
@@ -34,7 +35,7 @@
 			{#if choice.next}
 				<li>
 					<button onclick={() => updateCurrentScene(choice.next)}>
-						{choice.text.toUpperCase()}
+						{choice.text}
 					</button>
 				</li>
 			{/if}
