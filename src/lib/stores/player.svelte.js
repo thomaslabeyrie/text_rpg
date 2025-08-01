@@ -3,6 +3,7 @@ export const player = $state({
 	gold: 100,
 	weapon: null,
 	inventory: [],
+
 	attack() {
 		//TODO
 	}
