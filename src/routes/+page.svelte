@@ -15,7 +15,7 @@
 	import ChoicesButtons from '$lib/components/ChoicesButtons.svelte';
 	import PlayerInfos from '$lib/components/PlayerInfos.svelte';
 	import { onMount } from 'svelte';
-	import { syncStorage } from '../data/indexedDB';
+	import { syncDB } from '../data/indexedDB';
 
 	let currentSceneId = 'start';
 	let currentScene = $state(scenes[currentSceneId]);
@@ -27,7 +27,7 @@
 	$inspect(currentScene.id);
 
 	onMount(() => {
-		syncStorage();
+		syncDB();
 	});
 </script>
 
