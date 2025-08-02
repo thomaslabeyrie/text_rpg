@@ -25,7 +25,10 @@
 		{$player.gold}
 	</div>
 
-	<div class="wrapper">Weapon: {$player.weapon.name}</div>
+	<div class="wrapper">
+		<img class="icon weapon" src="/assets/img/icons/sword.svg" alt="weapon" />
+		{$player.weapon.name}
+	</div>
 	<div class="items">
 		Items:
 		{#each formattedInventory as item}

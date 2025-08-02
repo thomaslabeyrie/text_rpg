@@ -26,7 +26,8 @@
 			{#each shopItems as item}
 				<li>
 					<button onclick={() => purchaseItem(item)}>
-						Buy {item.name} ({item.value} G)
+						Buy {item.name} ({item.value}
+						<img class="icon coin" src="/assets/img/icons/coin.svg" alt="coin" />)
 					</button>
 				</li>
 			{/each}
@@ -64,6 +65,10 @@
 		}
 
 		button {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
 			font-family: inherit;
 			font-size: 1.5rem;
 			color: inherit;
@@ -73,6 +78,10 @@
 			/* border: 1px solid var(--text); */
 			border: none;
 			cursor: pointer;
+		}
+
+		.icon {
+			width: 20px;
 		}
 	}
 </style>
